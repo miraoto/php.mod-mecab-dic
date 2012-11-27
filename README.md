@@ -18,7 +18,7 @@ How to use
 
 Related information
 ----------------------------------------------------------------------
-- [mecabにwikipediaのタイトルリストを追加する - ミラボ](http://log.miraoto.com/ "mecab dictionary")
+- [mecabにwikipediaのタイトルリストを追加する - ミラボ](http://log.miraoto.com/2012/11/703/ "mecab dictionary")
 
 License
 ----------------------------------------------------------------------
