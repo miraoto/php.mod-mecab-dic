@@ -5,12 +5,12 @@ Frequent using module to make mecab dictionary.
 
 How to use
 ----------------------------------------------------------------------
-1. make temporary directory(tmp) and permission change it.
-	$ mkdir /mod-mecab-dic/tmp/
-	$ chmod 777 /mod-mecab-dic/tmp/
+1. make temporary directory(tmp) and permission change it.  
+    $ mkdir /mod-mecab-dic/tmp/
+    $ chmod 777 /mod-mecab-dic/tmp/
 2. execute bootstrap.php  
  e.g. In the case of 'wikipedia'  
-	$ php /path/to/mod-mecab-dic/bootstrap.php wikipedia
+    $ php /path/to/mod-mecab-dic/bootstrap.php wikipedia
 
 Related information
 ----------------------------------------------------------------------
