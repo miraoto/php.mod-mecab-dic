@@ -1,6 +1,6 @@
 <?php
 /**
-* Make 'Wikipedia' mecab dictionary.
+* Make 'Hatena keywords' mecab dictionary.
 *
 * Copyright (c) 2012 miraoto. All rights reserved.
 *
