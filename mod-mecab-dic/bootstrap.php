@@ -18,7 +18,6 @@ define('SYSTEM_DIR',dirname(__FILE__));
 define('SYSTEM_TMP_DIR',SYSTEM_DIR . '/' . 'tmp');
 
 require_once SYSTEM_DIR . '/libs/model.php';
-require_once SYSTEM_DIR . '/libs/csv.php';
 require_once SYSTEM_DIR . '/libs/dictionary.php';
 
 /**
