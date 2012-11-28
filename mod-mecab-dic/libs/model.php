@@ -51,10 +51,8 @@ class Model {
         if (file_exists(TARGET_FILE)) {
             unlink(TARGET_FILE);
         }
-/*
         if (file_exists(TARGET_CSV_FILE)) {
             unlink(TARGET_CSV_FILE);
         }
-*/
     }
 }
