@@ -39,11 +39,7 @@ if (!is_subclass_of($modelClass,'Model')) {
     die('"' . $modelClassName . '" must be a subclass of "Model".');
 }
 $modelClass->parseTargetFile();
-/**
- *
- */
-$csvClass = new Csv(TARGET_CSV_FILE);
-$csvClass->make();
+$modelClass->makeCsvFileForMecabDic();
 /**
  *
  */

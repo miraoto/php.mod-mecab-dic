@@ -43,6 +43,14 @@ class Model {
     }
 
     /**
+     * Make Csv file
+     *  -append method.
+     * @access public
+     */
+    public function makeCsvFile() {
+    }
+
+    /**
      * Delete the unnecessary files.
      *
      * @access public
@@ -54,5 +62,37 @@ class Model {
         if (file_exists(TARGET_CSV_FILE)) {
             unlink(TARGET_CSV_FILE);
         }
+    }
+
+
+    /**
+     * Make word cost.
+     *
+     * @access protected
+     * @param  integer $comp
+     * @param  integer $val
+     */
+    protected function _cost($comp, $val) {
+        $max  = $comp;
+        if ( $comp <= $val ) {
+            $max = $val;
+        }
+        return (int)$max;
+    }
+
+    /**
+     * Make csv string
+     *
+     * @access protected
+     * @param  array $data
+     */
+    protected function _makeCsvString($data) {
+        foreach ($data as $k => $v) {
+            if (preg_match("/[\",\n]/", $v)) {
+                $data[$k] = '"' . str_replace('"', '""', $v) . '"';
+            }
+        }
+        $line = implode(',', $data);
+        return $line;
     }
 }

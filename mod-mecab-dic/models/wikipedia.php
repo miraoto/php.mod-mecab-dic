@@ -31,4 +31,49 @@ class Wikipedia extends Model {
             exec('gunzip ' . TARGET_FILE . '.gz');
         }
     }
+
+    /**
+     * Make Csv file.
+     * 
+     * @access public
+     */
+    public function makeCsvFileForMecabDic() {
+        if (!file_exists(TARGET_FILE)) {
+            die('Target file "' . TARGET_FILE . '" not found.' . "\n");
+        }
+        $fp = fopen(TARGET_FILE, "r");
+        while (!feof($fp)) {
+            $title = fgets($fp);
+            $title = trim($title);
+            $title = mb_convert_encoding($title, 'utf-8');
+            if (preg_match('/^\./',$title)) {
+                continue;
+            }
+            elseif (preg_match('/^[0-9]{1,100}$/',$title)) {
+                continue;
+            }
+            elseif (preg_match('/[0-9]{4}./',$title)) {
+                continue;
+            }
+            if (strlen($title) > 3) {
+                $line   = array();
+                $line[] = $title;
+                $line[] = 0;
+                $line[] = 0;
+                $line[] = $this->_cost(-36000,-400 * (strlen($title)^1.5));
+                $line[] = '名詞' ;
+                $line[] = '固有名詞';
+                $line[] = '*';
+                $line[] = '*';
+                $line[] = '*';
+                $line[] = '*';
+                $line[] = $title;
+                $line[] = '*';
+                $line[] = '*';
+                $line[] = 'wikipedia_word';
+                file_put_contents(TARGET_CSV_FILE,$this->_makeCsvString($line) . "\n",FILE_APPEND);
+            }
+        }
+        fclose($fp);
+    }
 }
